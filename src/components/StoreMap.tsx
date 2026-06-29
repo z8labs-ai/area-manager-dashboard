@@ -22,9 +22,9 @@ function makeMarker(color: string) {
 
 const homeIcon = L.divIcon({
   className: "custom-marker home-marker",
-  html: "<span></span>",
-  iconSize: [26, 26],
-  iconAnchor: [13, 13],
+  html: "<span aria-hidden=\"true\">★</span>",
+  iconSize: [34, 34],
+  iconAnchor: [17, 17],
 });
 
 export function StoreMap({ homeBase, stores, completed, onNavigate }: StoreMapProps) {

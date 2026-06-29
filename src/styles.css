@@ -309,9 +309,19 @@ textarea:focus-visible {
 }
 
 .home-marker span {
-  background: #f59e0b;
-  height: 26px;
-  width: 26px;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: #020617;
+  display: flex;
+  font-size: 30px;
+  height: 34px;
+  justify-content: center;
+  line-height: 1;
+  text-shadow:
+    0 0 2px #ffffff,
+    0 2px 8px rgba(23, 32, 51, 0.35);
+  width: 34px;
 }
 
 .popup-actions {
