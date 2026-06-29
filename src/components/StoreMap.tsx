@@ -56,7 +56,11 @@ export function StoreMap({ homeBase, stores, completed, onNavigate }: StoreMapPr
             <br />
             {store.routeGroup} route
             <br />
-            {completed[store.id] ? "Complete this month" : "Not complete this month"}
+            {store.requiresMonthlyWalk
+              ? completed[store.id]
+                ? "Complete this month"
+                : "Not complete this month"
+              : "No monthly walk required"}
             <div className="popup-actions">
               <button type="button" onClick={() => onNavigate(`store/${store.id}`)}>
                 Details

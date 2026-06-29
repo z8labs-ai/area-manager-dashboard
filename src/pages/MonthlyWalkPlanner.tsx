@@ -17,17 +17,23 @@ export function MonthlyWalkPlanner({
   onToggleComplete,
   onNavigate,
 }: MonthlyWalkPlannerProps) {
+  const walkStores = stores.filter((store) => store.requiresMonthlyWalk);
+
   return (
     <main className="page-grid">
       <section className="section-heading">
         <p className="eyebrow">{monthKey}</p>
         <h2>Monthly Walk Planner</h2>
-        <p>Work route by route and mark each store complete after the walk.</p>
+        <p>Work route by route. Non-walk locations stay in the store list, but are hidden from this planner.</p>
       </section>
 
       <div className="planner-grid">
         {routeGroups.map((route) => {
-          const routeStores = stores.filter((store) => store.routeGroup === route);
+          const routeStores = walkStores.filter((store) => store.routeGroup === route);
+
+          if (routeStores.length === 0) {
+            return null;
+          }
 
           return (
             <section className="planner-route" key={route}>

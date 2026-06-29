@@ -84,7 +84,8 @@ textarea:focus-visible {
 .nav-tabs,
 .filter-row,
 .button-row,
-.quick-actions {
+.quick-actions,
+.summary-strip {
   display: flex;
   flex-wrap: wrap;
   gap: 0.65rem;
@@ -163,6 +164,18 @@ textarea:focus-visible {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.summary-strip article {
+  background: #ffffff;
+  border: 1px solid #dbe3ef;
+  border-radius: 8px;
+  flex: 1 1 180px;
+  padding: 1rem;
+}
+
+.summary-strip h3 {
+  margin: 0;
 }
 
 .route-card {

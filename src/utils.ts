@@ -10,6 +10,10 @@ export function formatStoreLabel(store: Store) {
   return `${store.brand} #${store.storeNumber}`;
 }
 
+export function getWalkRequirementLabel(store: Store) {
+  return store.requiresMonthlyWalk ? "Monthly walk required" : "No monthly walk";
+}
+
 export function getCompletionPercent(completedCount: number, totalCount: number) {
   if (totalCount === 0) {
     return 0;

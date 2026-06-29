@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { RouteFilter } from "../components/RouteFilter";
 import { StoreCard } from "../components/StoreCard";
-import type { CompletionFilter, RouteGroup, Store } from "../types";
+import type { CompletionFilter, RouteGroup, Store, WalkFilter } from "../types";
 
 type StoreListProps = {
   stores: Store[];
@@ -14,20 +14,25 @@ type StoreListProps = {
 export function StoreList({ stores, completed, notes, onNavigate, onToggleComplete }: StoreListProps) {
   const [selectedRoute, setSelectedRoute] = useState<RouteGroup | "all">("all");
   const [completionFilter, setCompletionFilter] = useState<CompletionFilter>("all");
+  const [walkFilter, setWalkFilter] = useState<WalkFilter>("all");
 
   const filteredStores = useMemo(
     () =>
       stores.filter((store) => {
         const routeMatches = selectedRoute === "all" || store.routeGroup === selectedRoute;
         const isComplete = Boolean(completed[store.id]);
+        const walkMatches =
+          walkFilter === "all" ||
+          (walkFilter === "required" && store.requiresMonthlyWalk) ||
+          (walkFilter === "not-required" && !store.requiresMonthlyWalk);
         const completionMatches =
           completionFilter === "all" ||
           (completionFilter === "complete" && isComplete) ||
-          (completionFilter === "incomplete" && !isComplete);
+          (completionFilter === "incomplete" && !isComplete && store.requiresMonthlyWalk);
 
-        return routeMatches && completionMatches;
+        return routeMatches && walkMatches && completionMatches;
       }),
-    [completionFilter, completed, selectedRoute, stores],
+    [completionFilter, completed, selectedRoute, stores, walkFilter],
   );
 
   return (
@@ -38,6 +43,23 @@ export function StoreList({ stores, completed, notes, onNavigate, onToggleComple
       </section>
 
       <RouteFilter selectedRoute={selectedRoute} onChange={setSelectedRoute} />
+
+      <div className="filter-row" aria-label="Walk requirement filter">
+        {[
+          { value: "all", label: "All locations" },
+          { value: "required", label: "Monthly walks" },
+          { value: "not-required", label: "Non-walk" },
+        ].map((filter) => (
+          <button
+            className={walkFilter === filter.value ? "active" : ""}
+            key={filter.value}
+            onClick={() => setWalkFilter(filter.value as WalkFilter)}
+            type="button"
+          >
+            {filter.label}
+          </button>
+        ))}
+      </div>
 
       <div className="filter-row" aria-label="Completion filter">
         {(["all", "complete", "incomplete"] as CompletionFilter[]).map((filter) => (

@@ -1,5 +1,5 @@
 import type { HomeBase, Store } from "../types";
-import { formatStoreLabel, getDirectionsUrl } from "../utils";
+import { formatStoreLabel, getDirectionsUrl, getWalkRequirementLabel } from "../utils";
 import { routeColors } from "../routeColors";
 
 type StoreDetailProps = {
@@ -48,13 +48,18 @@ export function StoreDetail({
         <div className="detail-facts">
           <span style={{ color: routeColors[store.routeGroup] }}>{store.routeGroup} route</span>
           <span>{store.city}, {store.state}</span>
-          <span>{isComplete ? "Complete this month" : "Not complete this month"}</span>
+          <span>{getWalkRequirementLabel(store)}</span>
+          {store.requiresMonthlyWalk ? (
+            <span>{isComplete ? "Complete this month" : "Not complete this month"}</span>
+          ) : null}
         </div>
 
         <div className="button-row">
-          <button type="button" onClick={() => onToggleComplete(store.id)}>
-            {isComplete ? "Mark incomplete" : "Mark complete"}
-          </button>
+          {store.requiresMonthlyWalk ? (
+            <button type="button" onClick={() => onToggleComplete(store.id)}>
+              {isComplete ? "Mark incomplete" : "Mark complete"}
+            </button>
+          ) : null}
           <a className="button-link" href={getDirectionsUrl(homeBase, store)} target="_blank" rel="noreferrer">
             Google Maps directions
           </a>

@@ -10,11 +10,13 @@ type DashboardProps = {
 };
 
 export function Dashboard({ stores, completed, monthKey, onNavigate }: DashboardProps) {
-  const completedCount = stores.filter((store) => completed[store.id]).length;
+  const walkStores = stores.filter((store) => store.requiresMonthlyWalk);
+  const completedCount = walkStores.filter((store) => completed[store.id]).length;
+  const nonWalkCount = stores.length - walkStores.length;
 
   return (
     <main className="page-grid">
-      <ProgressSummary completedCount={completedCount} totalCount={stores.length} monthKey={monthKey} />
+      <ProgressSummary completedCount={completedCount} totalCount={walkStores.length} monthKey={monthKey} />
 
       <section className="quick-actions">
         <button type="button" onClick={() => onNavigate("map")}>
@@ -28,25 +30,44 @@ export function Dashboard({ stores, completed, monthKey, onNavigate }: Dashboard
         </button>
       </section>
 
+      <section className="summary-strip">
+        <article>
+          <p className="eyebrow">Territory</p>
+          <h3>{stores.length} total locations</h3>
+        </article>
+        <article>
+          <p className="eyebrow">Monthly walks</p>
+          <h3>{walkStores.length} required</h3>
+        </article>
+        <article>
+          <p className="eyebrow">Reference only</p>
+          <h3>{nonWalkCount} non-walk</h3>
+        </article>
+      </section>
+
       <section>
         <div className="section-heading">
           <h2>Route groups</h2>
-          <p>Manual route clusters from local JSON data.</p>
+          <p>Manual route clusters from the v0.2 territory list.</p>
         </div>
 
         <div className="route-grid">
           {routeGroups.map((route) => {
             const routeStores = stores.filter((store) => store.routeGroup === route);
-            const routeCompleted = routeStores.filter((store) => completed[store.id]).length;
+            const routeWalkStores = routeStores.filter((store) => store.requiresMonthlyWalk);
+            const routeCompleted = routeWalkStores.filter((store) => completed[store.id]).length;
 
             return (
               <article className="route-card" key={route}>
                 <span className="route-stripe" style={{ backgroundColor: routeColors[route as RouteGroup] }} />
                 <p className="eyebrow">{route} route</p>
                 <h3>
-                  {routeCompleted}/{routeStores.length} complete
+                  {routeCompleted}/{routeWalkStores.length} complete
                 </h3>
-                <p>{routeStores.map((store) => store.city).join(", ")}</p>
+                <p>
+                  {routeStores.length} total locations
+                  {routeStores.length !== routeWalkStores.length ? `, ${routeStores.length - routeWalkStores.length} non-walk` : ""}
+                </p>
               </article>
             );
           })}

@@ -1,6 +1,20 @@
-export type RouteGroup = "North" | "South" | "East" | "West";
+export type RouteGroup =
+  | "Local MD/DC"
+  | "Baltimore/North MD"
+  | "Western MD/WV"
+  | "Northern VA"
+  | "Southern VA"
+  | "Remote Academy"
+  | "Non-Walk";
 
-export type StoreBrand = "Home Depot" | "Academy Sports";
+export type StoreBrand =
+  | "Home Depot"
+  | "Academy"
+  | "Bill's"
+  | "Ace"
+  | "Cabela's"
+  | "Tractor Supply"
+  | "HD DFC";
 
 export type Store = {
   id: string;
@@ -13,6 +27,7 @@ export type Store = {
   lat: number;
   lng: number;
   routeGroup: RouteGroup;
+  requiresMonthlyWalk: boolean;
   phone?: string;
 };
 
@@ -33,3 +48,5 @@ export type CompletionStatus = Record<string, boolean>;
 export type StoreNotes = Record<string, string>;
 
 export type CompletionFilter = "all" | "complete" | "incomplete";
+
+export type WalkFilter = "all" | "required" | "not-required";
