@@ -30,6 +30,7 @@ export function StoreCard({
       </div>
 
       <p>{store.address}</p>
+      {store.phone ? <p className="store-phone">{store.phone}</p> : null}
 
       <div className="store-meta">
         <span style={{ color: routeColors[store.routeGroup] }}>{store.routeGroup} route</span>

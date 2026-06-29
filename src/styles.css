@@ -204,6 +204,10 @@ textarea:focus-visible {
   color: #526071;
 }
 
+.store-phone {
+  font-weight: 800;
+}
+
 .store-card-header {
   align-items: flex-start;
   display: flex;

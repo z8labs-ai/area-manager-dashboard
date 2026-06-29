@@ -44,6 +44,7 @@ export function StoreDetail({
         <p className="eyebrow">{formatStoreLabel(store)}</p>
         <h2>{store.name}</h2>
         <p>{store.address}</p>
+        {store.phone ? <p className="store-phone">{store.phone}</p> : null}
 
         <div className="detail-facts">
           <span style={{ color: routeColors[store.routeGroup] }}>{store.routeGroup} route</span>
