@@ -1,0 +1,114 @@
+{
+  "homeBase": {
+    "name": "Home Base",
+    "address": "1301 Wesley St, Glenarden, MD 20706",
+    "lat": 38.9347,
+    "lng": -76.8599
+  },
+  "stores": [
+    {
+      "id": "hd-bowie",
+      "brand": "Home Depot",
+      "storeNumber": "2571",
+      "name": "Home Depot - Bowie",
+      "address": "Sample Home Depot, Bowie, MD",
+      "city": "Bowie",
+      "state": "MD",
+      "lat": 38.9467,
+      "lng": -76.7359,
+      "routeGroup": "East",
+      "phone": "Sample data"
+    },
+    {
+      "id": "hd-capitol-heights",
+      "brand": "Home Depot",
+      "storeNumber": "2554",
+      "name": "Home Depot - Capitol Heights",
+      "address": "Sample Home Depot, Capitol Heights, MD",
+      "city": "Capitol Heights",
+      "state": "MD",
+      "lat": 38.8851,
+      "lng": -76.9158,
+      "routeGroup": "South",
+      "phone": "Sample data"
+    },
+    {
+      "id": "hd-college-park",
+      "brand": "Home Depot",
+      "storeNumber": "2555",
+      "name": "Home Depot - College Park",
+      "address": "Sample Home Depot, College Park, MD",
+      "city": "College Park",
+      "state": "MD",
+      "lat": 39.0046,
+      "lng": -76.9297,
+      "routeGroup": "North",
+      "phone": "Sample data"
+    },
+    {
+      "id": "hd-lanham",
+      "brand": "Home Depot",
+      "storeNumber": "2588",
+      "name": "Home Depot - Lanham",
+      "address": "Sample Home Depot, Lanham, MD",
+      "city": "Lanham",
+      "state": "MD",
+      "lat": 38.9671,
+      "lng": -76.8619,
+      "routeGroup": "North",
+      "phone": "Sample data"
+    },
+    {
+      "id": "hd-hyattsville",
+      "brand": "Home Depot",
+      "storeNumber": "2560",
+      "name": "Home Depot - Hyattsville",
+      "address": "Sample Home Depot, Hyattsville, MD",
+      "city": "Hyattsville",
+      "state": "MD",
+      "lat": 38.9559,
+      "lng": -76.9455,
+      "routeGroup": "West",
+      "phone": "Sample data"
+    },
+    {
+      "id": "academy-waldorf",
+      "brand": "Academy Sports",
+      "storeNumber": "A101",
+      "name": "Academy Sports - Waldorf",
+      "address": "Sample Academy Sports, Waldorf, MD",
+      "city": "Waldorf",
+      "state": "MD",
+      "lat": 38.6265,
+      "lng": -76.9105,
+      "routeGroup": "South",
+      "phone": "Sample data"
+    },
+    {
+      "id": "academy-columbia",
+      "brand": "Academy Sports",
+      "storeNumber": "A102",
+      "name": "Academy Sports - Columbia",
+      "address": "Sample Academy Sports, Columbia, MD",
+      "city": "Columbia",
+      "state": "MD",
+      "lat": 39.2037,
+      "lng": -76.861,
+      "routeGroup": "North",
+      "phone": "Sample data"
+    },
+    {
+      "id": "academy-annapolis",
+      "brand": "Academy Sports",
+      "storeNumber": "A103",
+      "name": "Academy Sports - Annapolis",
+      "address": "Sample Academy Sports, Annapolis, MD",
+      "city": "Annapolis",
+      "state": "MD",
+      "lat": 38.9784,
+      "lng": -76.4922,
+      "routeGroup": "East",
+      "phone": "Sample data"
+    }
+  ]
+}
