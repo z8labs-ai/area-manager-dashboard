@@ -166,11 +166,24 @@ textarea:focus-visible {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
+.planner-overview {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
 .summary-strip article {
   background: #ffffff;
   border: 1px solid #dbe3ef;
   border-radius: 8px;
   flex: 1 1 180px;
+  padding: 1rem;
+}
+
+.planner-overview article {
+  background: #ffffff;
+  border: 1px solid #dbe3ef;
+  border-radius: 8px;
   padding: 1rem;
 }
 
@@ -299,6 +312,44 @@ textarea:focus-visible {
   padding-left: 0.75rem;
 }
 
+.smart-planner,
+.planner-week,
+.planner-day-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.planner-week-heading h3,
+.planner-day h4 {
+  margin: 0;
+}
+
+.planner-day-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.planner-day {
+  background: #ffffff;
+  border: 1px solid #dbe3ef;
+  border-radius: 8px;
+  box-shadow: 0 16px 40px rgba(23, 32, 51, 0.08);
+  overflow: hidden;
+  padding: 1rem;
+  position: relative;
+}
+
+.planner-day .route-stripe {
+  inset: 0 0 auto;
+}
+
+.planner-day-header {
+  align-items: flex-start;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: space-between;
+  padding-top: 0.6rem;
+}
+
 .planner-row {
   align-items: center;
   border-top: 1px solid #e2e8f0;
@@ -308,13 +359,24 @@ textarea:focus-visible {
   padding: 0.85rem 0;
 }
 
+.planner-row.compact {
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
 .planner-row label {
   align-items: center;
   display: flex;
   gap: 0.8rem;
+  min-width: 0;
+}
+
+.planner-row label span {
+  min-width: 0;
 }
 
 .planner-row input {
+  flex: 0 0 auto;
   height: 1.3rem;
   width: 1.3rem;
 }

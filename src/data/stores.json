@@ -16,7 +16,7 @@
       "state": "VA",
       "lat": 38.3032,
       "lng": -77.4605,
-      "routeGroup": "Remote Academy",
+      "routeGroup": "Southern VA",
       "requiresMonthlyWalk": true,
       "phone": "(540) 736-6720"
     },
@@ -30,7 +30,7 @@
       "state": "MD",
       "lat": 39.6418,
       "lng": -77.72,
-      "routeGroup": "Remote Academy",
+      "routeGroup": "Western MD/WV",
       "requiresMonthlyWalk": true,
       "phone": "(227) 239-0274"
     },
@@ -44,7 +44,7 @@
       "state": "PA",
       "lat": 39.9626,
       "lng": -76.7277,
-      "routeGroup": "Remote Academy",
+      "routeGroup": "Pennsylvania/Delaware",
       "requiresMonthlyWalk": true,
       "phone": "(223) 299-4110"
     },
@@ -58,7 +58,7 @@
       "state": "PA",
       "lat": 40.2732,
       "lng": -76.8867,
-      "routeGroup": "Remote Academy",
+      "routeGroup": "Pennsylvania/Delaware",
       "requiresMonthlyWalk": true,
       "phone": "(717) 971-0930"
     },

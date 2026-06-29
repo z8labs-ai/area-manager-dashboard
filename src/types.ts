@@ -4,7 +4,7 @@ export type RouteGroup =
   | "Western MD/WV"
   | "Northern VA"
   | "Southern VA"
-  | "Remote Academy"
+  | "Pennsylvania/Delaware"
   | "Non-Walk";
 
 export type StoreBrand =

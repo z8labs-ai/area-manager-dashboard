@@ -6,7 +6,7 @@ export const routeColors: Record<RouteGroup, string> = {
   "Western MD/WV": "#9333ea",
   "Northern VA": "#16a34a",
   "Southern VA": "#dc2626",
-  "Remote Academy": "#f59e0b",
+  "Pennsylvania/Delaware": "#f59e0b",
   "Non-Walk": "#64748b",
 };
 

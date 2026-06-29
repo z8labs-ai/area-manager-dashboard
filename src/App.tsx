@@ -99,6 +99,7 @@ export default function App() {
       return (
         <MonthlyWalkPlanner
           completed={completed}
+          homeBase={storeData.homeBase}
           monthKey={monthKey}
           onNavigate={navigateTo}
           onToggleComplete={toggleComplete}

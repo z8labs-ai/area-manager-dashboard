@@ -47,8 +47,8 @@ export function Dashboard({ stores, completed, monthKey, onNavigate }: Dashboard
 
       <section>
         <div className="section-heading">
-          <h2>Route groups</h2>
-          <p>Manual route clusters from the v0.2 territory list.</p>
+          <h2>Route zones</h2>
+          <p>Geographic clusters used for pin colors and travel planning.</p>
         </div>
 
         <div className="route-grid">
