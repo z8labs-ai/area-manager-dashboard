@@ -24,6 +24,9 @@ const digitWords: Record<string, string> = {
   nine: "9",
 };
 
+const planningLogicSummary =
+  "I plan Monday through Thursday around the closest local stores, keep walks to three or four stops, order each walk by the nearest next stop, and reserve Friday and Saturday for farther zone clusters.";
+
 function normalize(text: string) {
   return text.toLowerCase().replace(/[#.,:;!?]/g, " ").replace(/\s+/g, " ").trim();
 }
@@ -147,7 +150,7 @@ export function parseVoiceCommand(
     const storeList = nextBlock.remainingStores.map((store) => formatStoreLabel(store)).join(", ");
     return {
       type: "suggest",
-      message: `Rob suggests Week ${nextBlock.week.weekNumber}, ${nextBlock.day.dayName}: ${nextBlock.day.title}. Remaining stops: ${storeList}.`,
+      message: `Rob suggests Week ${nextBlock.week.weekNumber}, ${nextBlock.day.dayName}: ${nextBlock.day.title}. ${planningLogicSummary} Remaining stops: ${storeList}.`,
       storeIds: nextBlock.remainingStores.map((store) => store.id),
     };
   }

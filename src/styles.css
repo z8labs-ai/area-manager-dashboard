@@ -299,6 +299,31 @@ textarea:focus-visible {
   overflow: hidden;
 }
 
+.zone-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.zone-legend span {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #dbe3ef;
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 0.86rem;
+  font-weight: 800;
+  gap: 0.45rem;
+  padding: 0.45rem 0.7rem;
+}
+
+.zone-legend i {
+  border-radius: 999px;
+  display: inline-block;
+  height: 0.7rem;
+  width: 0.7rem;
+}
+
 .custom-marker span {
   border: 3px solid #ffffff;
   border-radius: 999px;

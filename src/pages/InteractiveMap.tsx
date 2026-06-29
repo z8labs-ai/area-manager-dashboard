@@ -22,7 +22,10 @@ export function InteractiveMap({ homeBase, stores, completed, onNavigate }: Inte
     <main className="page-grid">
       <section className="section-heading">
         <h2>Interactive Map</h2>
-        <p>Click a pin to see store details, route group, completion status, and directions.</p>
+        <p>
+          Zone outlines show the planning areas Rob uses for local weekdays and Friday/Saturday travel clusters.
+          Click a pin to see store details, completion status, and directions.
+        </p>
       </section>
 
       <RouteFilter selectedRoute={selectedRoute} onChange={setSelectedRoute} />
