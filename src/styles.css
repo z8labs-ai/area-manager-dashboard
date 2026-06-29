@@ -72,6 +72,31 @@ textarea:focus-visible {
   margin: 0;
 }
 
+.voice-assistant {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #dbe3ef;
+  border-radius: 8px;
+  box-shadow: 0 16px 40px rgba(23, 32, 51, 0.08);
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.voice-assistant h2,
+.voice-assistant p {
+  margin: 0;
+}
+
+.voice-assistant small {
+  color: #64748b;
+  display: block;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
 .eyebrow {
   color: #64748b;
   font-size: 0.78rem;
@@ -415,6 +440,7 @@ textarea {
 
 @media (max-width: 760px) {
   .app-header,
+  .voice-assistant,
   .progress-panel,
   .planner-row {
     align-items: stretch;

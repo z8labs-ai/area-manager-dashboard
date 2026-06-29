@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import rawStoreData from "./data/stores.json";
 import { Navigation } from "./components/Navigation";
+import { VoiceAssistant } from "./components/VoiceAssistant";
 import { Dashboard } from "./pages/Dashboard";
 import { InteractiveMap } from "./pages/InteractiveMap";
 import { MonthlyWalkPlanner } from "./pages/MonthlyWalkPlanner";
@@ -62,11 +63,30 @@ export default function App() {
     }));
   }
 
+  function setStoreComplete(storeId: string, isComplete: boolean) {
+    setCompleted((previous) => ({
+      ...previous,
+      [storeId]: isComplete,
+    }));
+  }
+
   function saveNote(storeId: string, note: string) {
     setNotes((previous) => ({
       ...previous,
       [storeId]: note,
     }));
+  }
+
+  function appendNote(storeId: string, note: string) {
+    setNotes((previous) => {
+      const existingNote = previous[storeId]?.trim();
+      const nextNote = existingNote ? `${existingNote}\n\nVoice note: ${note}` : `Voice note: ${note}`;
+
+      return {
+        ...previous,
+        [storeId]: nextNote,
+      };
+    });
   }
 
   function renderPage() {
@@ -133,6 +153,14 @@ export default function App() {
   return (
     <div className="app-shell">
       <Navigation currentPage={currentPage.startsWith("store/") ? "stores" : currentPage} onNavigate={navigateTo} />
+      <VoiceAssistant
+        completed={completed}
+        homeBase={storeData.homeBase}
+        onAppendNote={appendNote}
+        onNavigate={navigateTo}
+        onSetComplete={setStoreComplete}
+        stores={storeData.stores}
+      />
       {renderPage()}
     </div>
   );
